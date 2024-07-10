@@ -1,0 +1,103 @@
+body {
+  font-family: var(--inter);
+}
+
+.MuiPaper-root {
+  border-radius: var(--border-radius)!important;
+  background: var(--white);
+  box-shadow: 0 0 1px rgba(12, 26, 75, 0.1), 0 10px 16px rgba(20, 37, 63, 0.06)!important;
+  margin-top: 8px;
+  //max-height: 316px;
+  font-family: var(--inter)!important;
+  transition: none!important;
+}
+
+.MuiAutocomplete-listbox {
+  padding: 4px 0!important;
+
+  .MuiMenuItem-root {
+    display: flex!important;
+    align-items: center!important;
+    justify-content: space-between!important;
+    position: relative;
+    padding: 10px 11px 10px 14px!important;
+    background: transparent!important;
+
+    &.Mui-selected {
+      background: transparent!important;
+
+      &:hover {
+        background: #F5F8FF!important;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 13px;
+        width: 16px;
+        height: 11px;
+        background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTEiIHZpZXdCb3g9IjAgMCAxNiAxMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0LjY2NjMgMUw1LjQ5OTY3IDEwLjE2NjdMMS4zMzMwMSA2IiBzdHJva2U9IiM0NDRDRTciIHN0cm9rZS13aWR0aD0iMS42NjY2NyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    &:hover {
+      background: #F5F8FF!important;
+
+      & .select-remove {
+        display: block;
+      }
+    }
+  }
+
+  .MuiListItem-button {
+    border-radius: 8px;
+    padding: 10px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-image: linear-gradient(
+                      90deg,
+                      rgba(255, 255, 255, 0) 0%,
+                      rgba(255, 255, 255, 0.06) 71.01%,
+                      rgba(255, 255, 255, 0) 99.52%
+      );
+    }
+
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      background-image: linear-gradient(
+                      90deg,
+                      rgba(232, 232, 232, 0.12) 0%,
+                      rgba(196, 196, 196, 0) 78.12%
+      );
+    }
+
+    &.Mui-selected {
+      background-color: transparent;
+    }
+  }
+
+  .MuiListItem-root.Mui-selected,
+  .MuiListItem-root.Mui-selected:hover {
+    background-color: transparent;
+  }
+}
+
+.-hidden {
+  display: none;
+}
