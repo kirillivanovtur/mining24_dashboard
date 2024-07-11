@@ -7,7 +7,7 @@ import en from '../../assets/locales/en/translation.json';
 
 export const LANGUAGES = new Map([
   ['en', 'English'],
-  ['ru', 'Русский'],
+  ['es', 'Español'],
 ]);
 
 const resources = {

@@ -1,5 +1,40 @@
 {
+  "error": {
+    "network": {
+      "404": "Network error"
+    },
+    "INCORRECT_EMAIL_OR_PASSWORD": "Incorrect login or password"
+  },
   "auth": {
-    "login": "Login"
+    "login": "Login",
+    "form": {
+      "email": {
+        "label": "Your email",
+        "placeholder": "name@example.com",
+        "errors": {
+          "empty": "Enter email",
+          "valid": "Please enter a valid email"
+        }
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Password",
+        "errors": {
+          "empty": "Enter password",
+          "valid": "At least 8 characters\nMin one lowercase and uppercase latter\nMin one number"
+        }
+      }
+    },
+    "btns": {
+      "login": "Login"
+    },
+    "texts": {
+      "remember": "Remember me",
+      "registration": "Not registered?"
+    },
+    "link": {
+      "forgot_password": "Lost password?",
+      "registration": "Find a referring partner"
+    }
   }
 }
