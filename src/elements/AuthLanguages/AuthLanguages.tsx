@@ -27,7 +27,7 @@ export const AuthLanguages: FC<Props> = (props: Props) => {
       className={`${className}`}
     >
       {LANGUAGE_LIST.map((l, index) => (
-        <>
+        <div key={`authLang-${index}`}>
           <span
             className={`authLang-name ${i18n.language === l[0] ? '-active' : ''}`}
             onClick={() => changeLanguage(l[0])}
@@ -35,11 +35,11 @@ export const AuthLanguages: FC<Props> = (props: Props) => {
             {l[1]}
           </span>
           {
-            index > LANGUAGE_LIST.length ? (
+            (index + 1) < LANGUAGE_LIST.length ? (
               <span className="authLang-sep">/</span>
             ) : null
           }
-        </>
+        </div>
       ))}
     </AuthLanguagesStyles>
   );

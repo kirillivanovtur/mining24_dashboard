@@ -185,7 +185,7 @@ const Login: FC<Props> = (props: Props) => {
                 }
                 label={t('auth.texts.remember')}
               />
-              <Link className="login__links-link" to={PATHS.FORGOT_PASSWORD}>{t('login.link.forgot_password')}</Link>
+              <Link className="login__links-link" to={PATHS.FORGOT_PASSWORD}>{t('auth.link.forgot_password')}</Link>
             </div>
             <div className="login__button-wrap">
               <Button
@@ -201,7 +201,8 @@ const Login: FC<Props> = (props: Props) => {
           </form>
 
           <div className="login__links">
-            <Link className="login__links-link" to={PATHS.REGISTRATION}>{t('login.link.registration')}</Link>
+            <span className="login__links-text">{t('auth.texts.registration')} </span>
+            <Link className="login__links-link" to={PATHS.REGISTRATION}>{t('auth.link.registration')}</Link>
           </div>
 
         </div>

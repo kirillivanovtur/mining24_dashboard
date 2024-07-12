@@ -4,10 +4,10 @@ import types from '../actionTypes';
 
 function* loading() {
   yield put({
-    type: types.LOADING_START,
+    type: types.SET_LOADING,
   });
 }
 
 export default function* appSagas() {
-  yield takeLatest(types.LOADING_START, loading);
+  yield takeLatest(types.SET_LOADING, loading);
 }

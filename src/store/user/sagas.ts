@@ -1,6 +1,6 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
 
-import { setLoading, setError } from '../loadingsErrors/actions';
+import { setLoading, setError } from '../app/actions';
 // import { STORAGE_KEYS } from '../../const/storage_keys.constants';
 import types from '../actionTypes';
 import {ERRORS} from "../../const/errors.constants";
