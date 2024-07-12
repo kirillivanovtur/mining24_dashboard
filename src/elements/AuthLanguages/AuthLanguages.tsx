@@ -24,7 +24,7 @@ export const AuthLanguages: FC<Props> = (props: Props) => {
 
   return (
     <AuthLanguagesStyles
-      className={`${className}`}
+      className={`${className ? className : ''}`}
     >
       {LANGUAGE_LIST.map((l, index) => (
         <div key={`authLang-${index}`}>

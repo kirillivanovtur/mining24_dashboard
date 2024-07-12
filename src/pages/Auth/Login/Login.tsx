@@ -3,6 +3,7 @@ import {useTranslation} from 'react-i18next';
 import cloneDeep from 'lodash/cloneDeep';
 import {connect} from 'react-redux';
 import {FormControlLabel, Checkbox} from '@mui/material';
+import SvgIcon from '@mui/material/SvgIcon';
 import {Link} from "react-router-dom";
 import {AuthStyles} from "../Auth.Styles.tsx";
 import {PATHS} from "../../../const/paths.constants.ts";
@@ -25,8 +26,8 @@ export interface Props {
 
 // eslint-disable-next-line react-refresh/only-export-components
 const Login: FC<Props> = (props: Props) => {
-  const { loading, login, error } = props;
-  const { t } = useTranslation();
+  const {loading, login, error} = props;
+  const {t} = useTranslation();
 
   const [values, setValues] = useState<{ [key: string]: string }>({
     email: '',
@@ -36,7 +37,30 @@ const Login: FC<Props> = (props: Props) => {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [rememberPassword, setRememberPassword] = useState<boolean>(false);
 
+  const CheckBoxIcon = () => {
+    return (
+      <SvgIcon>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="Property 1=Default">
+            <rect id="Rectangle 103" x="0.5" y="0.5" width="13" height="13" rx="3.5" stroke="#3A3B3C"/>
+          </g>
+        </svg>
+      </SvgIcon>
+    );
+  };
 
+  const CheckBoxCheckedIcon = () => {
+    return (
+      <SvgIcon>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="Property 1=checked">
+            <rect id="Rectangle 103" x="0.5" y="0.5" width="13" height="13" rx="3.5" stroke="#3A3B3C"/>
+            <circle id="Ellipse 11" cx="7" cy="7" r="4" fill="#3A3B3C"/>
+          </g>
+        </svg>
+      </SvgIcon>
+    );
+  };
 
   let getFormErrors: (data: { [p: string]: string }) => LogInParams;
   // eslint-disable-next-line prefer-const
@@ -123,7 +147,7 @@ const Login: FC<Props> = (props: Props) => {
       <div className="auth-container">
         <div className="grid-container auth-grid">
           <div className="auth-top">
-            <Logo className="auth-logo" to={PATHS.DASHBOARD}>
+            <Logo className="auth-top__logo" to={PATHS.DASHBOARD}>
               <img src="/img/main/logo.svg" alt="m24"/>
             </Logo>
             <span className="auth-top__title">Login</span>
@@ -131,25 +155,6 @@ const Login: FC<Props> = (props: Props) => {
           <AuthLanguages/>
 
           <form onSubmit={onSubmit}>
-            <Input
-              className='lg bold'
-              type="email"
-              name="email"
-              value={values.email}
-              placeholder={`${t('auth.form.email.placeholder')}`}
-              error={error ? t(`error.${error}`) : errors.email}
-              onChange={onChange}
-              onBlur={onBlur}
-            />
-            <Input
-              className='lg bold'
-              type="password"
-              name="password"
-              placeholder={`${t('auth.form.password.placeholder')}`}
-              error={error ? t(`error.${error}`) : errors.password}
-              onChange={onChange}
-              onBlur={onBlur}
-            />
             <Input
               className='registration-input'
               type="email"
@@ -172,12 +177,14 @@ const Login: FC<Props> = (props: Props) => {
               onChange={onChange}
               onBlur={onBlur}
             />
-            <div>
+            <div className="auth-checkbox__wrap">
               <FormControlLabel
                 className="auth-checkbox"
                 control={
                   <Checkbox
                     checked={rememberPassword}
+                    icon={<CheckBoxIcon />}
+                    checkedIcon={<CheckBoxCheckedIcon />}
                     aria-describedby="termsRegistration-text"
                     onChange={(e: React.ChangeEvent<any>) =>
                       setRememberPassword(e.target.checked)}

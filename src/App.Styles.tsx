@@ -9,6 +9,11 @@ export const GlobalStyle: any = createGlobalStyle`
 
     --white: #ffffff;
     --dark-white: #F2F2F2;
+    --Dark-Gray: #3A3B3C;
+    --primary: #3742FA;
+    --gray-500: #6B7280;
+    --primary-5: #F1F1FA;
+    --gray-600: #4B5563;
   }
 
   html {
