@@ -106,6 +106,7 @@ export const FormControl: any = styled.div`
 
 export const FormControlInputWrap: any = styled.div`
   position: relative;
+  min-width: 21rem;
 `;
 
 export const FormControlInputLabel: any = styled.label`
@@ -120,7 +121,7 @@ export const FormControlInputLabel: any = styled.label`
 
 export const FormControlInput: any = styled.input`
   position: relative;
-  padding: 9px 14px;
+  padding: 10px 14px;
   width: 100%;
   font-size: 14px;
   font-style: normal;

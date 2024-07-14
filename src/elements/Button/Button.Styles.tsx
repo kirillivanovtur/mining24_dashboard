@@ -3,17 +3,19 @@ import styled from 'styled-components';
 export const ButtonContainer: any = styled.button`
   display: inline-block;
   text-align: center;
-  color: var(--white);
-  border-radius: var(--border-radius);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 14px */
+  border-radius: 6px;
+  background: var(--primary, #3742FA);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.04);
+  color: var(--white, #ffffff);
   border: none;
-  background-color: var(--light-green);
-  padding: 12px 20px;
+  padding: 18px 20px;
   transition: background-color 0.3s, border-color 0.3s, color 0.3s;
   cursor: pointer;
   outline: none;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 24px;
 
   &:focus {
   }
@@ -38,24 +40,7 @@ export const ButtonContainer: any = styled.button`
       margin-left: 10px;
       width: 16px;
       height: 16px;
-      stroke: var(--white);
-    }
-  }
-
-  &.registration__link {
-    margin-bottom: 40px;
-    text-decoration: underline;
-    background-color: transparent;
-    border: none;
-
-    &:hover {
-      background-color: transparent;
-      border: none;
-    }
-
-    &:focus {
-      color: var(--light-gray);
-      box-shadow: none;
+      stroke: var(--white, #ffffff);
     }
   }
 `;

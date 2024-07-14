@@ -11,6 +11,7 @@ export const AuthLanguagesStyles: any = styled.div`
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+      cursor: pointer;
       
       &.-active {
         color: var(--primary, #3742FA);
@@ -18,7 +19,12 @@ export const AuthLanguagesStyles: any = styled.div`
     }
     &-sep {
       display: inline-block;
-      margin: 0 10px;
+      color: var(--Dark-Gray, #3A3B3C);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin: 0 2px;
     }
   }
 `;

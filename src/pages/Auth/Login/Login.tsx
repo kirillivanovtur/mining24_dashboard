@@ -2,8 +2,6 @@ import React, {FC, useState, useCallback} from 'react';
 import {useTranslation} from 'react-i18next';
 import cloneDeep from 'lodash/cloneDeep';
 import {connect} from 'react-redux';
-import {FormControlLabel, Checkbox} from '@mui/material';
-import SvgIcon from '@mui/material/SvgIcon';
 import {Link} from "react-router-dom";
 import {AuthStyles} from "../Auth.Styles.tsx";
 import {PATHS} from "../../../const/paths.constants.ts";
@@ -20,6 +18,7 @@ import { AppStateType } from '../../../store';
 import types from '../../../store/actionTypes';
 import { login } from '../../../store/user/actions';
 import { selectErrorByKey, selectLoadingByKey } from '../../../store/app/selectors';
+import Checkbox from "../../../elements/Checkbox/Checkbox.tsx";
 
 export interface Props {
 }
@@ -37,30 +36,6 @@ const Login: FC<Props> = (props: Props) => {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [rememberPassword, setRememberPassword] = useState<boolean>(false);
 
-  const CheckBoxIcon = () => {
-    return (
-      <SvgIcon>
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g id="Property 1=Default">
-            <rect id="Rectangle 103" x="0.5" y="0.5" width="13" height="13" rx="3.5" stroke="#3A3B3C"/>
-          </g>
-        </svg>
-      </SvgIcon>
-    );
-  };
-
-  const CheckBoxCheckedIcon = () => {
-    return (
-      <SvgIcon>
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g id="Property 1=checked">
-            <rect id="Rectangle 103" x="0.5" y="0.5" width="13" height="13" rx="3.5" stroke="#3A3B3C"/>
-            <circle id="Ellipse 11" cx="7" cy="7" r="4" fill="#3A3B3C"/>
-          </g>
-        </svg>
-      </SvgIcon>
-    );
-  };
 
   let getFormErrors: (data: { [p: string]: string }) => LogInParams;
   // eslint-disable-next-line prefer-const
@@ -71,11 +46,11 @@ const Login: FC<Props> = (props: Props) => {
       password: '',
     };
 
-    if (!password) newErrors.password = 'registration.page.form.password.errors.empty';
-    if (password && !validatePassword(password)) newErrors.password = 'registration.page.form.password.errors.valid';
+    if (!password) newErrors.password = 'auth.page.form.password.errors.empty';
+    if (password && !validatePassword(password)) newErrors.password = 'auth.page.form.password.errors.valid';
 
-    if (!email) newErrors.email = 'registration.page.form.email.errors.empty';
-    if (email && !validateEmail(email)) newErrors.email = 'login.page.form.email.errors.valid';
+    if (!email) newErrors.email = 'auth.page.form.email.errors.empty';
+    if (email && !validateEmail(email)) newErrors.email = 'auth.page.form.email.errors.valid';
 
     return newErrors;
   };
@@ -154,9 +129,12 @@ const Login: FC<Props> = (props: Props) => {
           </div>
           <AuthLanguages/>
 
-          <form onSubmit={onSubmit}>
+          <form
+            className="auth-form"
+            onSubmit={onSubmit}
+          >
             <Input
-              className='registration-input'
+              className="auth-input"
               type="email"
               name="email"
               value={values.email}
@@ -167,7 +145,7 @@ const Login: FC<Props> = (props: Props) => {
               onBlur={onBlur}
             />
             <Input
-              className='registration-input'
+              className="auth-input"
               type="password"
               name="password"
               value={values.password}
@@ -178,25 +156,17 @@ const Login: FC<Props> = (props: Props) => {
               onBlur={onBlur}
             />
             <div className="auth-checkbox__wrap">
-              <FormControlLabel
+              <Checkbox
                 className="auth-checkbox"
-                control={
-                  <Checkbox
-                    checked={rememberPassword}
-                    icon={<CheckBoxIcon />}
-                    checkedIcon={<CheckBoxCheckedIcon />}
-                    aria-describedby="termsRegistration-text"
-                    onChange={(e: React.ChangeEvent<any>) =>
-                      setRememberPassword(e.target.checked)}
-                  />
-                }
                 label={t('auth.texts.remember')}
+                checked={rememberPassword}
+                onChange={setRememberPassword}
               />
-              <Link className="login__links-link" to={PATHS.FORGOT_PASSWORD}>{t('auth.link.forgot_password')}</Link>
+              <Link className="auth-links__link" to={PATHS.FORGOT_PASSWORD}>{t('auth.link.forgot_password')}</Link>
             </div>
-            <div className="login__button-wrap">
+            <div className="auth-button__wrap">
               <Button
-                className='login__button loading-btn'
+                className='auth-button loading-btn'
                 type="submit"
                 disabled={loading}
               >
@@ -207,9 +177,9 @@ const Login: FC<Props> = (props: Props) => {
 
           </form>
 
-          <div className="login__links">
-            <span className="login__links-text">{t('auth.texts.registration')} </span>
-            <Link className="login__links-link" to={PATHS.REGISTRATION}>{t('auth.link.registration')}</Link>
+          <div className="auth-links">
+            <span className="auth-links__text">{t('auth.texts.registration')} </span>
+            <Link className="auth-links__link" to={PATHS.REGISTRATION}>{t('auth.link.registration')}</Link>
           </div>
 
         </div>

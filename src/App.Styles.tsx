@@ -14,6 +14,9 @@ export const GlobalStyle: any = createGlobalStyle`
     --gray-500: #6B7280;
     --primary-5: #F1F1FA;
     --gray-600: #4B5563;
+    --primary-700: #1A56DB;
+    --gray-900: #111928;
+    --red: #C60E0E;
   }
 
   html {
@@ -35,6 +38,7 @@ export const GlobalStyle: any = createGlobalStyle`
     text-align: left;
     scrollbar-width: none;
     background-color: var(--dark-white)!important;
+    letter-spacing: normal!important;
 
     ::-webkit-scrollbar {
       display: none;
