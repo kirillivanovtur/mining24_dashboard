@@ -4,7 +4,6 @@ export const AuthStyles: any = styled.div`
   position: relative;
   width: 100vw;
   min-height: 100vh;
-  min-width: 1030px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -85,6 +84,16 @@ export const AuthStyles: any = styled.div`
       
       &__wrap {
         margin-top: 1.2rem;
+      }
+    }
+  }
+
+  @media (max-width: 48em) {
+    padding-top: 15vh;
+    
+    .auth {
+      &-grid {
+        padding: 3.1rem 1.2rem;
       }
     }
   }

@@ -4,6 +4,7 @@ import XHR from 'i18next-xhr-backend';
 import moment from 'moment-timezone';
 import { initReactI18next } from 'react-i18next';
 import en from '../../assets/locales/en/translation.json';
+import es from '../../assets/locales/es/translation.json';
 
 export const LANGUAGES = new Map([
   ['en', 'English'],
@@ -14,6 +15,9 @@ const resources = {
   en: {
     translation: en
   },
+  es: {
+    translation: es
+  }
 };
 
 i18n

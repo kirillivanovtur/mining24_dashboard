@@ -55,23 +55,12 @@ export const FormControl: any = styled.div`
 
   &.-error {
     input {
-      border: 1px solid #FDA29B;
-      box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+      border-radius: 6px;
+      background: rgba(217, 15, 15, 0.10);
+      color: var(--red, #C60E0E);
     }
     
     .input-wrap {
-      &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 16px;
-        height: 16px;
-        right: 14px;
-        top: 14px;
-        background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuOTk5OTIgNS4zMzM1VjguMDAwMTZNNy45OTk5MiAxMC42NjY4SDguMDA2NTlNMTQuNjY2NiA4LjAwMDE2QzE0LjY2NjYgMTEuNjgyMSAxMS42ODE4IDE0LjY2NjggNy45OTk5MiAxNC42NjY4QzQuMzE4MDIgMTQuNjY2OCAxLjMzMzI1IDExLjY4MjEgMS4zMzMyNSA4LjAwMDE2QzEuMzMzMjUgNC4zMTgyNiA0LjMxODAyIDEuMzMzNSA3Ljk5OTkyIDEuMzMzNUMxMS42ODE4IDEuMzMzNSAxNC42NjY2IDQuMzE4MjYgMTQuNjY2NiA4LjAwMDE2WiIgc3Ryb2tlPSIjRjA0NDM4IiBzdHJva2Utd2lkdGg9IjEuMzMzMzMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K);
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
     }
     
     &.-label {
@@ -107,6 +96,11 @@ export const FormControl: any = styled.div`
 export const FormControlInputWrap: any = styled.div`
   position: relative;
   min-width: 21rem;
+
+  @media (max-width: 48em) {
+    width: 16.5rem;
+    min-width: 16.5rem;
+  }
 `;
 
 export const FormControlInputLabel: any = styled.label`
@@ -177,12 +171,12 @@ export const FormControlShow: any = styled.button`
 `;
 
 export const FormControlInputError: any = styled.p`
-  margin: 6px 0;
-  color: var(--red);
-  font-weight: 400;
+  color: var(--red, #C60E0E);
   font-size: 14px;
-  line-height: 20px;
-  text-align: left;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 6px 0;
   display: block;
   white-space: pre-line;
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;

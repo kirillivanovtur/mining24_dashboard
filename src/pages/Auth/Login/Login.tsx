@@ -46,11 +46,11 @@ const Login: FC<Props> = (props: Props) => {
       password: '',
     };
 
-    if (!password) newErrors.password = 'auth.page.form.password.errors.empty';
-    if (password && !validatePassword(password)) newErrors.password = 'auth.page.form.password.errors.valid';
+    if (!password) newErrors.password = t('auth.form.password.errors.empty');
+    if (password && !validatePassword(password)) newErrors.password = t('auth.form.password.errors.valid');
 
-    if (!email) newErrors.email = 'auth.page.form.email.errors.empty';
-    if (email && !validateEmail(email)) newErrors.email = 'auth.page.form.email.errors.valid';
+    if (!email) newErrors.email = t('auth.form.email.errors.empty');
+    if (email && !validateEmail(email)) newErrors.email = t('auth.form.email.errors.valid');
 
     return newErrors;
   };

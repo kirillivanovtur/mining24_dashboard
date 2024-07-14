@@ -1,0 +1,40 @@
+{
+  "error": {
+    "network": {
+      "404": "Error de red"
+    },
+    "INCORRECT_EMAIL_OR_PASSWORD": "Inicio de sesión o contraseña incorrectos"
+  },
+  "auth": {
+    "login": "Iniciar sesión",
+    "form": {
+      "email": {
+        "label": "Tu correo electrónico",
+        "placeholder": "name@example.com",
+        "errors": {
+          "empty": "Ingrese el correo electrónico",
+          "valid": "Por favor ingresa un correo electrónico válido"
+        }
+      },
+      "password": {
+        "label": "Contraseña",
+        "placeholder": "••••••••••••",
+        "errors": {
+          "empty": "Ingrese la contraseña",
+          "valid": "Al menos 8 caracteres\nMínimo una minúscula y mayúscula esta última\nMínimo un número"
+        }
+      }
+    },
+    "btns": {
+      "login": "Iniciar sesión"
+    },
+    "texts": {
+      "remember": "Recuérdame",
+      "registration": "¿No estás registrado?"
+    },
+    "link": {
+      "forgot_password": "¿Perdiste tu contraseña?",
+      "registration": "Encontrar un socio referente"
+    }
+  }
+}
