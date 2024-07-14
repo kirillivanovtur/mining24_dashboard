@@ -38,14 +38,16 @@ export type LogInParams = {
 };
 
 export type RegistrationParams = {
+  /** first name */
+  first_name?: string;
+  /** last name */
+  last_name?: string;
   /** e-mail */
   email?: string;
-  /** Id inviter */
-  inviter?: string;
-  /** Password */
-  password: string;
-  /** Confirm Password */
-  confPassword: string;
+  /** Telegram */
+  telegram?: string;
+  /** Terms */
+  terms?: string;
 };
 
 export type ForgotPasswordParams = {

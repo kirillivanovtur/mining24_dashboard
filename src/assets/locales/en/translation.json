@@ -9,13 +9,35 @@
     "login": "Login",
     "forgot_password": "Forgot Password",
     "ask_partner": "Ask for partner",
+    "registration": "Sign up",
     "form": {
+      "first_name": {
+        "label": "First Name",
+        "placeholder": "John",
+        "errors": {
+          "empty": "Enter first name"
+        }
+      },
+      "last_name": {
+        "label": "Last Name",
+        "placeholder": "Smith",
+        "errors": {
+          "empty": "Enter last name"
+        }
+      },
       "email": {
         "label": "Your email",
         "placeholder": "name@example.com",
         "errors": {
           "empty": "Enter email",
           "valid": "Please enter a valid email"
+        }
+      },
+      "telegram": {
+        "label": "Telegram (Phone number or ID)",
+        "placeholder": "+1 234 567 89 99",
+        "errors": {
+          "empty": "Enter telegram data"
         }
       },
       "password": {
@@ -31,18 +53,22 @@
       "login": "Login",
       "forgot_password": "Send me the link",
       "forgot_password_2": "Return to Home Page",
-      "ask_partner": "Start"
+      "ask_partner": "Start",
+      "registration": "Sign up"
     },
     "texts": {
       "remember": "Remember me",
       "registration": "Not registered?",
+      "registration_2": "Please fill in all fields to register your account. All fields are mandatory. You will receive a confirmation email to the address you indicate when registering.",
       "forgot_password": "Please enter the email address which you used when registering. A password reset link will be sent to this address.",
       "forgot_password_2": "A password reset link has been sent to your email. Please use it to reset your password.",
-      "ask_partner": "Click the button below to be redirected to our friendly Telegram bot, who will ask you several questions to match you with a referring partner best suited for you."
+      "ask_partner": "Click the button below to be redirected to our friendly Telegram bot, who will ask you several questions to match you with a referring partner best suited for you.",
+      "terms": "I have read and agree to the"
     },
     "link": {
       "forgot_password": "Lost password?",
-      "registration": "Find a referring partner"
+      "registration": "Find a referring partner",
+      "terms": " Terms and Conditions"
     }
   }
 }

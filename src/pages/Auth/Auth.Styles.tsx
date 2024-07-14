@@ -68,6 +68,20 @@ export const AuthStyles: any = styled.div`
       line-height: normal;
     }
     
+    &-above {
+      max-width: 23rem;
+      margin-top: 1.25rem;
+      
+      &__text {
+        color: var(--Dark-Gray, #3A3B3C);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        margin: 0;
+      }
+    }
+    
     &-links {
       margin-top: 1.3rem;
       padding-left: 10px;
@@ -87,6 +101,30 @@ export const AuthStyles: any = styled.div`
         font-weight: 400;
         line-height: normal;
         text-decoration: none;
+        cursor: pointer;
+      }
+    }
+    
+    &-terms {
+      &__wrap {
+        margin-top: 0.6rem;
+      }
+
+      .MuiFormControlLabel-label {
+        color: var(--Dark-Gray, #3A3B3C);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      
+      &__link {
+        color: var(--primary, #3742FA);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        cursor: pointer;
       }
     }
 
@@ -108,6 +146,10 @@ export const AuthStyles: any = styled.div`
       }
 
       &-description {
+        max-width: 16.5rem;
+      }
+
+      &-above {
         max-width: 16.5rem;
       }
 

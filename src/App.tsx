@@ -8,6 +8,7 @@ import GuestRoutes from './routes/guestRoutes';
 import Login from './pages/Auth/Login';
 import ForgotPassword from './pages/Auth/ForgotPassword';
 import AskPartner from './pages/Auth/AskPartner';
+import Registration from './pages/Auth/Registration';
 
 function App() {
   return (
@@ -52,6 +53,15 @@ function App() {
           element={
             <GuestRoutes title="AskPartner">
               <AskPartner />
+            </GuestRoutes>
+          }
+        />
+
+        <Route
+          path={PATHS.REGISTRATION}
+          element={
+            <GuestRoutes title="Registration">
+              <Registration />
             </GuestRoutes>
           }
         />

@@ -34,12 +34,8 @@ export const FormControl: any = styled(FormControlLabel)`
   }
 
   &.-error {
-    .MuiSvgIcon-root {
-      fill: var(--red);
-    }
-
-    + p {
-      display: block;
+    .MuiFormControlLabel-label {
+      color: var(--red, #C60E0E);
     }
   }
 `;
