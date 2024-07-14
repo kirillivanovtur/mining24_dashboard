@@ -127,7 +127,7 @@ const Login: FC<Props> = (props: Props) => {
             <Logo className="auth-top__logo" to={PATHS.DASHBOARD}>
               <img src="/img/main/logo.svg" alt="m24"/>
             </Logo>
-            <span className="auth-top__title">Login</span>
+            <span className="auth-top__title">{t('auth.login')}</span>
           </div>
           <AuthLanguages/>
 
@@ -181,7 +181,7 @@ const Login: FC<Props> = (props: Props) => {
 
           <div className="auth-links">
             <span className="auth-links__text">{t('auth.texts.registration')} </span>
-            <Link className="auth-links__link" to={PATHS.REGISTRATION}>{t('auth.link.registration')}</Link>
+            <Link className="auth-links__link" to={PATHS.ASK_PARTNER}>{t('auth.link.registration')}</Link>
           </div>
 
         </div>

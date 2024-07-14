@@ -7,6 +7,8 @@
   },
   "auth": {
     "login": "Login",
+    "forgot_password": "Forgot Password",
+    "ask_partner": "Ask for partner",
     "form": {
       "email": {
         "label": "Your email",
@@ -28,13 +30,15 @@
     "btns": {
       "login": "Login",
       "forgot_password": "Send me the link",
-      "forgot_password_2": "Return to Home Page"
+      "forgot_password_2": "Return to Home Page",
+      "ask_partner": "Start"
     },
     "texts": {
       "remember": "Remember me",
       "registration": "Not registered?",
       "forgot_password": "Please enter the email address which you used when registering. A password reset link will be sent to this address.",
-      "forgot_password_2": "A password reset link has been sent to your email. Please use it to reset your password."
+      "forgot_password_2": "A password reset link has been sent to your email. Please use it to reset your password.",
+      "ask_partner": "Click the button below to be redirected to our friendly Telegram bot, who will ask you several questions to match you with a referring partner best suited for you."
     },
     "link": {
       "forgot_password": "Lost password?",

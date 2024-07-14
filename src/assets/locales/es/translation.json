@@ -7,6 +7,8 @@
   },
   "auth": {
     "login": "Iniciar sesión",
+    "forgot_password": "Olvidé mi contraseña",
+    "ask_partner": "Preguntar por socio",
     "form": {
       "email": {
         "label": "Tu correo electrónico",
@@ -26,11 +28,17 @@
       }
     },
     "btns": {
-      "login": "Iniciar sesión"
+      "login": "Iniciar sesión",
+      "forgot_password": "Envíame el enlace",
+      "forgot_password_2": "Regresar a la página de inicio",
+      "ask_partner": "Iniciar"
     },
     "texts": {
       "remember": "Recuérdame",
-      "registration": "¿No estás registrado?"
+      "registration": "¿No estás registrado?",
+      "forgot_password": "Ingrese la dirección de correo electrónico que utilizó al registrarse. Se enviará un enlace para restablecer la contraseña a esta dirección.",
+      "forgot_password_2": "Se envió un enlace para restablecer la contraseña a su correo electrónico. Utilícelo para restablecer su contraseña.",
+      "ask_partner": "Haga clic en el botón a continuación para ser redirigido a nuestro amigable bot de Telegram, quien le hará varias preguntas para conectarlo con el socio de referencia más adecuado para usted."
     },
     "link": {
       "forgot_password": "¿Perdiste tu contraseña?",

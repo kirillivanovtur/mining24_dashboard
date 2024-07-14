@@ -7,6 +7,7 @@ import {PATHS} from "./const/paths.constants.ts";
 import GuestRoutes from './routes/guestRoutes';
 import Login from './pages/Auth/Login';
 import ForgotPassword from './pages/Auth/ForgotPassword';
+import AskPartner from './pages/Auth/AskPartner';
 
 function App() {
   return (
@@ -42,6 +43,15 @@ function App() {
           element={
             <GuestRoutes title="ForgotPassword">
               <ForgotPassword />
+            </GuestRoutes>
+          }
+        />
+
+        <Route
+          path={PATHS.ASK_PARTNER}
+          element={
+            <GuestRoutes title="AskPartner">
+              <AskPartner />
             </GuestRoutes>
           }
         />

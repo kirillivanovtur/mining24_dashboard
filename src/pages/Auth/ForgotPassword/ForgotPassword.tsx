@@ -118,14 +118,14 @@ const ForgotPassword: FC<Props> = (props: Props) => {
   );
 
   return (
-    <AuthStyles className='login'>
+    <AuthStyles className='forgotPassword'>
       <div className="auth-container">
         <div className="grid-container auth-grid">
           <div className="auth-top">
             <Logo className="auth-top__logo" to={PATHS.DASHBOARD}>
               <img src="/img/main/logo.svg" alt="m24"/>
             </Logo>
-            <span className="auth-top__title">Forgot Password {stage === FORGOT_PASSWORD_STAGES.FIRST ? '1' : '2'}/2</span>
+            <span className="auth-top__title">{t('auth.forgot_password')} {stage === FORGOT_PASSWORD_STAGES.FIRST ? '1' : '2'}/2</span>
           </div>
           <AuthLanguages/>
 
@@ -177,7 +177,7 @@ const ForgotPassword: FC<Props> = (props: Props) => {
 
           <div className="auth-links">
             <span className="auth-links__text">{t('auth.texts.registration')} </span>
-            <Link className="auth-links__link" to={PATHS.REGISTRATION}>{t('auth.link.registration')}</Link>
+            <Link className="auth-links__link" to={PATHS.ASK_PARTNER}>{t('auth.link.registration')}</Link>
           </div>
 
         </div>
