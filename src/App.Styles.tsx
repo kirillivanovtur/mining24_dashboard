@@ -8,6 +8,7 @@ export const GlobalStyle: any = createGlobalStyle`
     --inter: 'Inter', sans-serif;
 
     --white: #ffffff;
+    --black: #000000;
     --dark-white: #F2F2F2;
     --Dark-Gray: #3A3B3C;
     --primary: #3742FA;

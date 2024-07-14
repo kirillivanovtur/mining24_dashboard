@@ -6,6 +6,7 @@ import { StylesProvider } from '@mui/styles';
 import {PATHS} from "./const/paths.constants.ts";
 import GuestRoutes from './routes/guestRoutes';
 import Login from './pages/Auth/Login';
+import ForgotPassword from './pages/Auth/ForgotPassword';
 
 function App() {
   return (
@@ -32,6 +33,15 @@ function App() {
           element={
             <GuestRoutes title="Login">
               <Login />
+            </GuestRoutes>
+          }
+        />
+
+        <Route
+          path={PATHS.FORGOT_PASSWORD}
+          element={
+            <GuestRoutes title="ForgotPassword">
+              <ForgotPassword />
             </GuestRoutes>
           }
         />

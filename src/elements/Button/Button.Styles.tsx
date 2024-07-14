@@ -16,6 +16,7 @@ export const ButtonContainer: any = styled.button`
   transition: background-color 0.3s, border-color 0.3s, color 0.3s;
   cursor: pointer;
   outline: none;
+  text-decoration: none;
 
   &:focus {
   }

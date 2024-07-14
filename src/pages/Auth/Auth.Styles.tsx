@@ -57,10 +57,21 @@ export const AuthStyles: any = styled.div`
         margin-top: 1.2rem;
       }
     }
+
+    &-description {
+      max-width: 23rem;
+      margin-top: 1.25rem;
+      color: var(--black, #000);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
     
     &-links {
       margin-top: 1.3rem;
       padding-left: 10px;
+      max-width: 23rem;
       
       &__text {
         color: var(--Dark-Gray, #3A3B3C);
@@ -94,6 +105,14 @@ export const AuthStyles: any = styled.div`
     .auth {
       &-grid {
         padding: 3.1rem 1.2rem;
+      }
+
+      &-description {
+        max-width: 16.5rem;
+      }
+
+      &-links {
+        max-width: 16.5rem;
       }
     }
   }
