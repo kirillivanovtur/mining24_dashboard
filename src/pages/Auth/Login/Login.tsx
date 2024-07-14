@@ -21,7 +21,7 @@ import { selectLoadingByKey } from '../../../store/app/selectors';
 import Checkbox from "../../../elements/Checkbox/Checkbox.tsx";
 
 export interface Props {
-  login: (payload: any) => void;
+  login: (payload: LogInParams) => void;
   loading: boolean;
 }
 
@@ -113,7 +113,7 @@ const Login: FC<Props> = (props: Props) => {
       };
 
       if (!checkErrors(newErrors)) {
-        // login(data);
+        login(data);
       }
     },
     [login, values, getFormErrors]

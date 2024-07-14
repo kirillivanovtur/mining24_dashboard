@@ -1,7 +1,6 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
 
 import { setLoading, setError } from '../app/actions';
-// import { STORAGE_KEYS } from '../../const/storage_keys.constants';
 import types from '../actionTypes';
 import {ERRORS} from "../../const/errors.constants";
 import {STORAGE_KEYS} from "../../const/storage_keys.constants";
@@ -9,19 +8,27 @@ import {STORAGE_KEYS} from "../../const/storage_keys.constants";
 function* login() {
 
   yield put(setError(types.LOGIN_REQUEST, ERRORS.INCORRECT_EMAIL_OR_PASSWORD));
-  // yield put(setLoading(types.LOGIN_REQUEST, true));
-  // try {
-  //   localStorage.removeItem(STORAGE_KEYS.AUTH);
-  //   yield all([put({ type: types.LOGIN_SUCCESS }), put(setLoading(types.LOGIN_SUCCESS, false))]);
-  // } catch (e) {
-  //   yield all([
-  //     put(setLoading(types.LOGOUT_REQUEST, false)),
-  //     put({
-  //       type: types.LOGIN_FAILURE,
-  //       payload: ERRORS.INCORRECT_EMAIL_OR_PASSWORD,
-  //     }),
-  //   ]);
-  // }
+  yield put(setLoading(types.LOGIN_REQUEST, true));
+  try {
+    const auth = {
+      accessToken: '123',
+      refreshToken: '321',
+    };
+
+    localStorage.setItem(STORAGE_KEYS.AUTH, JSON.stringify(auth));
+    yield all([
+      put({ type: types.LOGIN_SUCCESS }),
+      put(setLoading(types.LOGIN_SUCCESS, false))
+    ]);
+  } catch (e) {
+    yield all([
+      put(setLoading(types.LOGOUT_REQUEST, false)),
+      put({
+        type: types.LOGIN_FAILURE,
+        payload: ERRORS.INCORRECT_EMAIL_OR_PASSWORD,
+      }),
+    ]);
+  }
 }
 
 function* registration() {
@@ -32,16 +39,8 @@ function* registration() {
 }
 
 function* forgotPassword() {
-  const auth = {
-    accessToken: '123',
-    refreshToken: '321',
-  };
-
-  localStorage.setItem(STORAGE_KEYS.AUTH, JSON.stringify(auth));
   yield all([
     put({ type: types.FORGOT_PASSWORD_SUCCESS, payload: true }),
-    put(setLoading(types.FORGOT_PASSWORD_REQUEST, false)),
-    put({ type: types.LOGIN_SUCCESS })
   ]);
 }
 

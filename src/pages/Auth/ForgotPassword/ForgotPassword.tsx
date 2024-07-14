@@ -110,7 +110,7 @@ const ForgotPassword: FC<Props> = (props: Props) => {
       };
 
       if (!checkErrors(newErrors)) {
-        // forgotPassword(data);
+        forgotPassword(data);
         setStage(FORGOT_PASSWORD_STAGES.SECOND);
       }
     },

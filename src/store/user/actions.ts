@@ -1,6 +1,7 @@
 import types from '../actionTypes';
+import {LogInParams} from "../../api";
 
-const login = (payload: any) => ({
+const login = (payload: LogInParams) => ({
   type: types.LOGIN_REQUEST,
   payload,
 });
