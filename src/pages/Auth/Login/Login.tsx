@@ -84,7 +84,7 @@ const Login: FC<Props> = (props: Props) => {
 
       setErrors({
         ...errors,
-        [field]: newErrors[field],
+        [field]: newErrors[field as keyof LogInParams],
       });
     }
   };
@@ -96,7 +96,7 @@ const Login: FC<Props> = (props: Props) => {
 
       setErrors({
         ...errors,
-        [field]: newErrors[field],
+        [field]: newErrors[field as keyof LogInParams],
       });
     }
   };

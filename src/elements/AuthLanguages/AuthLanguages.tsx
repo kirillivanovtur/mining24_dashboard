@@ -16,7 +16,7 @@ export const AuthLanguages: FC<Props> = (props: Props) => {
   const { className } = props;
   const { i18n } = useTranslation();
 
-  const changeLanguage = (languageCode => {
+  const changeLanguage = ((languageCode: string) => {
       if (!languageCode || LANGUAGE_CODES_LIST.indexOf(languageCode) < 0) return;
       i18n.changeLanguage(languageCode);
     }

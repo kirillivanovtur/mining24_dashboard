@@ -82,7 +82,7 @@ const ForgotPassword: FC<Props> = (props: Props) => {
 
       setErrors({
         ...errors,
-        [field]: newErrors[field],
+        [field]: newErrors[field as keyof ForgotPasswordParams],
       });
     }
   };
@@ -94,7 +94,7 @@ const ForgotPassword: FC<Props> = (props: Props) => {
 
       setErrors({
         ...errors,
-        [field]: newErrors[field],
+        [field]: newErrors[field as keyof ForgotPasswordParams],
       });
     }
   };

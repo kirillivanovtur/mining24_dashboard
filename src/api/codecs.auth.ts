@@ -52,7 +52,7 @@ export type RegistrationParams = {
 
 export type ForgotPasswordParams = {
   /** e-mail */
-  email?: string;
+  email: string;
 };
 
 export type LogInResponse = {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { GlobalStyle } from './App.Styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -24,7 +23,7 @@ function App() {
         <Route
           path={PATHS.DASHBOARD}
           element={
-            <GuestRoutes title="Login">
+            <GuestRoutes>
               <Login />
             </GuestRoutes>
           }
@@ -33,7 +32,7 @@ function App() {
         <Route
           path={PATHS.LOGIN}
           element={
-            <GuestRoutes title="Login">
+            <GuestRoutes>
               <Login />
             </GuestRoutes>
           }
@@ -42,7 +41,7 @@ function App() {
         <Route
           path={PATHS.FORGOT_PASSWORD}
           element={
-            <GuestRoutes title="ForgotPassword">
+            <GuestRoutes>
               <ForgotPassword />
             </GuestRoutes>
           }
@@ -51,7 +50,7 @@ function App() {
         <Route
           path={PATHS.ASK_PARTNER}
           element={
-            <GuestRoutes title="AskPartner">
+            <GuestRoutes>
               <AskPartner />
             </GuestRoutes>
           }
@@ -60,7 +59,7 @@ function App() {
         <Route
           path={PATHS.REGISTRATION}
           element={
-            <GuestRoutes title="Registration">
+            <GuestRoutes>
               <Registration />
             </GuestRoutes>
           }

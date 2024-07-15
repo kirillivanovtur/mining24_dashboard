@@ -1,21 +1,17 @@
-import React, {FC} from 'react';
+import {FC} from 'react';
 import {useTranslation} from 'react-i18next';
 import {Link} from "react-router-dom";
 import {AuthStyles} from "../Auth.Styles.tsx";
 import {PATHS} from "../../../const/paths.constants.ts";
 import {
   Logo,
-  Loader,
   Button,
   AuthLanguages
 } from '../../../elements';
 
-export interface Props {
-}
 
 // eslint-disable-next-line react-refresh/only-export-components
-const AskPartner: FC<Props> = (props: Props) => {
-  const {loading} = props;
+const AskPartner: FC = () => {
   const {t} = useTranslation();
 
   return (
@@ -45,7 +41,6 @@ const AskPartner: FC<Props> = (props: Props) => {
                 to={PATHS.REGISTRATION}
               >
                 {t('auth.btns.ask_partner')}
-                {loading ? <Loader/> : null}
               </Button>
             </div>
 

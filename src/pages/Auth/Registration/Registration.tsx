@@ -26,6 +26,7 @@ export interface RegistrationProps {
   registration: (payload: RegistrationParams) => void;
   openModal: (payload: any) => void;
   closeModal: () => void;
+  loading: boolean;
 }
 
 const Registration: React.FC<RegistrationProps> = (props: RegistrationProps) => {
@@ -39,7 +40,7 @@ const Registration: React.FC<RegistrationProps> = (props: RegistrationProps) => 
     telegram: ''
   });
 
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [errors, setErrors] = useState<{ [key: string]: string | undefined }>({});
   const [termsRegistration, setTermsRegistration] = useState<boolean>(false);
 
   let getFormErrors: (data: { [p: string]: string }) => RegistrationParams;
@@ -91,7 +92,7 @@ const Registration: React.FC<RegistrationProps> = (props: RegistrationProps) => 
 
       setErrors({
         ...errors,
-        [field]: newErrors[field],
+        [field]: newErrors[field as keyof RegistrationParams],
       });
     }
   };
@@ -103,7 +104,7 @@ const Registration: React.FC<RegistrationProps> = (props: RegistrationProps) => 
 
       setErrors({
         ...errors,
-        [field]: newErrors[field],
+        [field]: newErrors[field as keyof RegistrationParams],
       });
     }
   };
@@ -122,7 +123,7 @@ const Registration: React.FC<RegistrationProps> = (props: RegistrationProps) => 
   const onSubmit = useCallback(
     (e: React.ChangeEvent<any>) => {
       e.preventDefault();
-      const newErrors: RegistrationParams = getFormErrors({...values, terms: termsRegistration});
+      const newErrors: RegistrationParams = getFormErrors({...values, terms: `${termsRegistration}`});
       setErrors(newErrors);
 
       const data: RegistrationParams = {
