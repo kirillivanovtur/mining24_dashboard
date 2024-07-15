@@ -18,6 +18,9 @@ export const GlobalStyle: any = createGlobalStyle`
     --primary-700: #1A56DB;
     --gray-900: #111928;
     --red: #C60E0E;
+    --background: #F9FAFB;
+
+    --rounded-lg: 8px;
   }
 
   html {

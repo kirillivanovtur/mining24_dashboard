@@ -35,7 +35,7 @@ export const FormControl: any = styled(FormControlLabel)`
 
   &.-error {
     .MuiFormControlLabel-label {
-      color: var(--red, #C60E0E);
+      color: var(--red, #C60E0E)!important;
     }
   }
 `;

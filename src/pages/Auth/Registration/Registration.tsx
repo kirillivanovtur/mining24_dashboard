@@ -15,17 +15,21 @@ import {RegistrationParams} from "../../../api";
 import {PATHS} from "../../../const/paths.constants";
 import {AppStateType} from '../../../store';
 import types from '../../../store/actionTypes';
+import {closeModal, openModal} from "../../../store/app/actions";
 import {registration} from '../../../store/user/actions';
 import {useTranslation} from "react-i18next";
 import {selectErrorByKey, selectLoadingByKey} from "../../../store/app/selectors.ts";
 import Checkbox from "../../../elements/Checkbox/Checkbox.tsx";
+import Terms from "../../../components/Modals/Terms";
 
 export interface RegistrationProps {
   registration: (payload: RegistrationParams) => void;
+  openModal: (payload: any) => void;
+  closeModal: () => void;
 }
 
 const Registration: React.FC<RegistrationProps> = (props: RegistrationProps) => {
-  const { registration, loading } = props;
+  const { registration, openModal, closeModal, loading } = props;
   const {t} = useTranslation();
 
   const [values, setValues] = useState<{ [key: string]: string }>({
@@ -134,6 +138,28 @@ const Registration: React.FC<RegistrationProps> = (props: RegistrationProps) => 
     [values, getFormErrors, registration]
   );
 
+  const handleOpenModal = (payload: any) => {
+    if (!openModal) return
+    openModal(payload)
+  };
+
+  const handleCloseModal = () => {
+    if (!closeModal) return
+    closeModal()
+  };
+
+  const modalTerms = () => (
+    <div className="modal-content">
+      <div className="modal-terms">
+        <Terms
+          closeModal={handleCloseModal}
+          action={(val: boolean) => onChangeTermsRegistration(val)}
+          value={termsRegistration}
+        />
+      </div>
+    </div>
+  );
+
   return (
     <AuthStyles className='registration'>
       <div className="auth-container">
@@ -206,6 +232,15 @@ const Registration: React.FC<RegistrationProps> = (props: RegistrationProps) => 
               />
               <span
                 className="auth-terms__link"
+                onClick={
+                  () => handleOpenModal({
+                    closeModal: closeModal,
+                    className: "modal modalTerms",
+                    hasCloseBtn: true,
+                    title: `${t('modals.terms.title')}`,
+                    content: modalTerms
+                  })
+                }
               > {t('auth.link.terms')}</span>
             </div>
 
@@ -235,4 +270,4 @@ const mapState = (state: AppStateType) => {
   };
 };
 
-export default connect(mapState, {registration})(Registration);
+export default connect(mapState, {registration, openModal, closeModal})(Registration);
